@@ -1,5 +1,5 @@
 #include <unistd.h>
-
+/*
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char	info[n];
@@ -19,6 +19,44 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+*/
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	char	info[n];
+	size_t	i;
+
+
+	if (src < dest)
+	  {
+	    i = ft_strlen((char *)src) - 1;
+
+	    while ( i >= 0)
+	      {
+		((char *)src)[i] = ((char *)dest)[i];
+		i--;
+	      }
+	    return (src);
+	  }
+	ft_memcpy(dest, src, n);
+	    
+	    
+	
+	
+	i = 0;
+	while (i < n)
+	{
+		((char*)info)[i] = ((char*)src)[i];
+		i++;
+	}
+	i = 0;
+	while (i < n)
+	{
+		((char*)dest)[i] = info[i];
+		i++;
+	}
+	return (dest);
+}
+
 /*
 #include <unistd.h>
 #include <stdio.h>
