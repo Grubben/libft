@@ -36,7 +36,8 @@ clean		:
 fclean		: clean
 				$(RM) $(NAME)
 
-re			: 
+re			: clean fclean
+				$(RM) 
 
 
 
