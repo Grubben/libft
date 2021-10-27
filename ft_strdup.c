@@ -31,7 +31,6 @@ char	*ft_strdup(const char *s1)
 	ptr[i] = '\0';
 	return (ptr);
 }
-
 /*
 int	main(void)
 {

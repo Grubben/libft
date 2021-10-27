@@ -19,7 +19,7 @@ int	ft_tolower(int c)
 	return (c);
 }
 
-
+/*
 int main(void)
 {
 	char lett = 'C';
@@ -27,3 +27,4 @@ int main(void)
 	printf("%c\n", ft_tolower(lett));
 	return 0;
 }
+*/

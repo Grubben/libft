@@ -22,7 +22,7 @@ char    *ft_strnstr(const char *haystack, const char *needle, size_t len)
     }
     return (NULL);
 }
-
+/*
 int	main(void)
 {
 	char	BIG[] = "goodbye";
@@ -32,3 +32,4 @@ int	main(void)
 	printf("%s\n", strnstr(BIG, SMALL, SIZE));
 	printf("%s\n", ft_strnstr(BIG, SMALL, SIZE));
 }
+*/
