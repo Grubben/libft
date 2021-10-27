@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/27 19:39:23 by amaria-d          #+#    #+#             */
+/*   Updated: 2021/10/27 19:42:07 by amaria-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,13 +30,13 @@ size_t	ft_strlen(const char *s);
 
 void	*ft_memset(void *b, int c, size_t len);
 
-void    ft_bzero(void *s, size_t n);
+void	ft_bzero(void *s, size_t n);
 
 void	*ft_memcpy(void *restrict dest, const void *restrict src, size_t n);
 
 void	*ft_memmove(void *dest, const void *src, size_t n);
 
-size_t	ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 
@@ -50,13 +62,9 @@ char	*strdup(const char *s1);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 
-char    *ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin(char const *s1, char const *s2);
 
-char    *ft_strtrim(char const *s1, char const *set);
-
-
-
+char	*ft_strtrim(char const *s1, char const *set);
 
 /* MINE */
-int ft_charinside(char c, const char   *s)
-
+int		ft_charinside(char c, const char *s);
