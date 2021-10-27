@@ -7,10 +7,8 @@
 				\
 				ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
 				ft_lstnew.c ft_lstsize.c
-
-#OBJS		= $(SRCS:.c=.o)
-
 SRCS		= $(wildcard *.c)
+
 OBJS		= $(SRCS:.c=.o)
 
 
@@ -18,16 +16,30 @@ CC 			= gcc
 RM			= rm -rf
 CFLAGS		= -Wall -Wextra -Werror -g -fsanitize=address
 
-
 NAME		= libft.a
 
-#$(NAME)		:$(OBJS)
-#				ar crs $(NAME) $(OBJS)
-$(NAME)		:$(OBJS)
+
+run			: 	
+				$(CC) $(CFLAGS) $(SRCS)
+
+$(NAME)		: $(OBJS)
 				ar rs $(NAME) $(OBJS)
+
+.PHONY		: all clean fclean re
+
+all			: $(NAME)
+
+
+clean		:
+				$(RM) $(OBJS)
+
+fclean		: clean
+				$(RM) $(NAME)
+
+re			: 
+
+
+
 
 %.out		: %.c
 				$(CC) $(CFLAGS) $< -o $@
-
-clean		:
-				$(RM) $(OBJS) *.out */ *.a
