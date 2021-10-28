@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 17:45:30 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/10/26 17:58:02 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/10/28 11:15:16 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,29 @@
 
 size_t	ft_strlen(const char *s);
 
-void	*ft_memcpy(void *restrict dest, const void *restrict src, size_t n);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
 
 /*Presuposto que memcpy escreve da esquerda para a direita
  * IMPORTANTE
 */
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	i;
 
-	if (src <= dest)
+	if (src < dst)
 	{
-		i = ft_strlen((char *)src);
+		i = len;
 		while (i > 0)
 		{
-			((char *)dest)[i - 1] = ((char *)src)[i - 1];
+			((char *)dst)[i - 1] = ((char *)src)[i - 1];
 			i--;
 		}
-		return ((void *)dest);
+		return ((void *)dst);
 	}
-	return (ft_memcpy(dest, src, n));
+	return (ft_memcpy(dst, src, len));
 }	
 
 /*
-
 int		main(void)
 {
 	char	hello1[30] = "girhello";
