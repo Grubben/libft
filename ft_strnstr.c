@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 19:31:07 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/10/27 19:35:25 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/10/28 16:24:39 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 
+	if (!ft_strlen(needle))
+		return ((char *)haystack);
 	i = 0;
-	while (haystack[i] != '\0' && i < len)
+	while (haystack[i] != '\0' && i < len) // + 1 - (signed long long)ft_strlen(needle))
 	{
 		if (haystack[i] == needle[0])
 		{
@@ -35,12 +37,13 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
+
 /*
 int	main(void)
 {
 	char	BIG[] = "goodbye";
-	char	SMALL[] = "d";
-	size_t	SIZE = 7;
+	char	SMALL[] = "ye";
+	size_t	SIZE = 6;
 
 	printf("%s\n", strnstr(BIG, SMALL, SIZE));
 	printf("%s\n", ft_strnstr(BIG, SMALL, SIZE));

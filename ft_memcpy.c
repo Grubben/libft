@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 17:45:24 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/10/27 20:01:16 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/10/28 15:08:39 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
 
+	if (dest == NULL && src == NULL)
+		return NULL;
 	i = 0;
 	while (i < n)
 	{
@@ -29,7 +31,8 @@ int		main(void)
 {
 	char str[] = "goodbye";
 
-	printf("%s\n", (char*)ft_memcpy(str, "hello", 1));
+	printf("%s\n", (char*)ft_memcpy(str, NULL, 1));
+	printf("%s\n", (char*)memcpy(NULL, str, 5));
 
 	return (0);
 }

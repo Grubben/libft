@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 18:25:00 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/10/21 18:25:29 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/10/28 16:00:57 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	if (dstsize)
 	{
 		i = ft_strlen(dst);
-		while (i < dstsize - 1)
+		while (src[i] && i < dstsize - 1)
 		{
 			dst[i] = src[i - dst_init_len];
 			i++;
@@ -35,18 +35,26 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 /*
 int main(void)
 {
-	char	hello1[20] = "hello";
-	char	good1[] = "goodbye";
+	// char	hello1[20] = "hello";
+	// char	good1[] = "goodbye";
 
-	char	hello2[20] = "hello";
-	char	good2[] = "goodbye";
+	// char	hello2[20] = "hello";
+	// char	good2[] = "goodbye";
 
-	int		size = 20;
+	// int		size = 20;
 
-	printf("%lu\n", strlcat(hello1, good1, size));
-	printf("%s\n\n", hello1);
+	char	dest[30];
+	char	*src = "AAAAAAAAA";
+	
+	// printf("%lu\n", strlcat(hello1, good1, size));
+	// printf("%s\n\n", hello1);
 
-	printf("%lu\n", ft_strlcat(hello2, good2, size));
-	printf("%s\n", hello2);
+	// printf("%lu\n", ft_strlcat(hello2, good2, size));
+	// printf("%s\n", hello2);
+
+	memset(dest, 0, 30);
+	printf("%zu\n", strlcat(dest, src, 1));
+	printf("%s\n", dest);
+	
 }
 */

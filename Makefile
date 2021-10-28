@@ -20,24 +20,24 @@ CFLAGS		= -Wall -Wextra -Werror
 
 NAME		= libft.a
 
-
 all			: $(NAME)
+
+ db			: 
+				$(CC) $(dbCFLAGS) $(SRCS)
+
+
+ run			:
+				$(CC) $(CFLAGS) $(SRCS)
+
+
 
 
 $(NAME)		: $(OBJS)
 				ar rs $(NAME) $(OBJS)
 
-# db			: 	
-# 				$(CC) $(dbCFLAGS) $(SRCS)
-
-
-# run			:
-# 				$(CC) $(CFLAGS) $(SRCS)
 
 
 .PHONY		: run all clean fclean re
-
-
 
 clean		:
 				$(RM) $(OBJS)
