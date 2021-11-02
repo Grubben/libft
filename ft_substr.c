@@ -14,24 +14,44 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	size_t	slen;
 	size_t	i;
 	char	*ptr;
 
-	ptr = malloc(ft_strlen(s) - start);
-	if (!ptr)
-		return (NULL);
-	i = 0;
-	while (s[start + i] != '\0' && i < len)
+	slen = ft_strlen(s);
+	if (start < slen)
 	{
-		ptr[i] = s[start + i];
-		i++;
+		ptr = malloc(slen - start + 1);
+		if (!ptr)
+			return (NULL);
+		i = 0;
+		while (start + i < slen && i < len)
+		{
+			ptr[i] = s[start + i];
+			i++;
+		}
+		ptr[i] = '\0';
+		return (ptr);
 	}
+	ptr = malloc(1);
+	ptr[0] = '\0';
 	return (ptr);
 }
+/*	return (NULL);*/
 
 /*
 int	main(void)
 {
-	printf("%s\n", ft_substr("goodbye", 4, 10));
+    char    *s;
+
+	// s = ft_substr("tripouille", 1, 1);
+    // printf("%s__%d\n", s, !strcmp(s, "r"));
+
+   	s = ft_substr("tripouille", 100, 1);
+	// printf("%s__%d\n", s, !strcmp(s, ""));
+	if (!strcmp(s, ""))
+		printf("it's null\n");
+
+	// printf("%s\n", ft_substr("goodbye", 4, 10));
 }
 */
