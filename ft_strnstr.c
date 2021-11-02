@@ -25,8 +25,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	if (!ft_strlen(needle))
 		return ((char *)haystack);
+	if (len < ft_strlen(needle))
+		return (NULL);
 	i = 0;
-	while (haystack[i] != '\0' && i < len) // + 1 - (signed long long)ft_strlen(needle))
+	while (haystack[i] != '\0' && i <= len - ft_strlen(needle))
 	{
 		if (haystack[i] == needle[0])
 		{
@@ -41,11 +43,13 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 /*
 int	main(void)
 {
-	char	BIG[] = "goodbye";
-	char	SMALL[] = "ye";
-	size_t	SIZE = 6;
+	// char	BIG[] = "goodbye";
+	// char	SMALL[] = "ye";
+	// size_t	SIZE = 6;
 
-	printf("%s\n", strnstr(BIG, SMALL, SIZE));
-	printf("%s\n", ft_strnstr(BIG, SMALL, SIZE));
+	// printf("%s\n", strnstr(BIG, SMALL, SIZE));
+	// printf("%s\n", ft_strnstr(BIG, SMALL, SIZE));
+    printf("%s\n", strnstr("aaabcabcd", "aaabc", 5));
+    printf("%s\n", ft_strnstr("aaabcabcd", "aaabc", 5));
 }
 */
