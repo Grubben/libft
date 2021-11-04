@@ -12,20 +12,6 @@
 
 #include "libft.h"
 
-static size_t	next_match(char const *s, char c)
-{
-	size_t	i;
-
-	i = 1;
-	while (s[i] != '\0')
-	{
-		if (s[i] == c)
-			return (i);
-		i++;
-	}
-	return (0);
-}
-
 static size_t	next_not_match(char const *s, char c)
 {
 	size_t	i;
@@ -43,22 +29,22 @@ static size_t	next_not_match(char const *s, char c)
 /*
     Receives string already strtrimmed
 
-    nexty => next_yes delimiter
-    nextn => next_not delimiter
+    nextd => next_yes delimiter
+    nextnd => next_not delimiter
 */
 static size_t	island_quant(char *s, char c)
 {
-	size_t	nexty;
-	size_t	nextn;
+	size_t	nextd;
+	size_t	nextnd;
 	size_t	n;
 
 	n = 0;
-	nexty = next_match(s, c);
-	while (nexty < ft_strlen(s) - 1 )
+	nextd = ft_strchr(s, c);
+	while (nextd < ft_strlen(s) - 1 )
 	{
 		n = n + 1;
-		nextn = nexty + next_not_match(s + nexty, c);
-		nexty = nextn + next_match(s + nextn, c);
+		nextnd = nextd + next_not_match(s + nextd, c);
+		nextd = nextnd + ft_strchr(s + nextnd, c);
 	}
 	return (n + 1);
 }
@@ -74,7 +60,7 @@ char	**ft_split(char const *s, char c)
 	char	*s_copy;
 	char	*c_copy;
 	size_t	islands_q;
-	size_t	nexty;
+	size_t	nextd;
 	size_t	j;
 	char	**arr;
 
@@ -88,15 +74,15 @@ char	**ft_split(char const *s, char c)
 	if (!arr)
 		return (NULL);
 	arr[islands_q * sizeof(char *)] = NULL;
-	nexty = next_match(s_copy, c);
+	nextd = ft_strchr(s_copy, c);
 	j = 0;
 	while (j < islands_q)
 	{
-		arr[j] = ft_substr(s_copy, 0, nexty);
-		if (nexty == 0)
+		arr[j] = ft_substr(s_copy, 0, nextd);
+		if (nextd == 0)
 			arr[j] = ft_substr(s_copy, 0, ft_strlen(s_copy));
-		s_copy = s_copy + nexty + next_not_match(s_copy + nexty, c);
-		nexty = next_match(s_copy, c);
+		s_copy = s_copy + nextd + next_not_match(s_copy + nextd, c);
+		nextd = ft_strchr(s_copy, c);
 		j++;
 	}
 	return (arr);
