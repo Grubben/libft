@@ -115,4 +115,8 @@ int main(void)
 	printf("%s\n", tab[3]);
 
 }
+<<<<<<< HEAD
 */
+=======
+*/
+>>>>>>> bf44440a8c0fddc15d986d2776b6aa68dfa117f5
