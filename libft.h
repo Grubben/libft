@@ -72,3 +72,5 @@ char	**ft_split(char const *s, char c);
 
 /* MINE */
 int		ft_charinside(char c, const char *s);
+
+char	*ft_strnchr(char *s, int c);
