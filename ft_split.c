@@ -18,15 +18,17 @@
 	nextd => next delimiter
 	nextnd => next not delimiter
 */
-static size_t	island_quant(char *s, char c)
+static size_t	island_quant(char const *s, char c)
 {
 	char	*nextd;
 	size_t	n;
 
-	n = 0;
+	if (ft_strlen(s) == 0)
+		return (0);
 	nextd = ft_strchr(s, c);
-	if ((unsigned long)(nextd - s) == ft_strlen(s))
+	if (nextd == NULL || (size_t)(nextd - s) == ft_strlen(s))
 		return (1);
+	n = 0;
 	while (nextd != NULL )
 	{
 		n = n + 1;
@@ -36,11 +38,28 @@ static size_t	island_quant(char *s, char c)
 	return (n + 1);
 }
 
+static void	arr_setter(char const *s, char **arr, char c)
+{
+	size_t	islands_q;
+	size_t	j;
+	char	*nextd;
 
-// static void arr_setter(char *s, char **arr, char c)
-// {
-
-// }
+	islands_q = island_quant(s, c);
+	j = 0;
+	while (j < islands_q)
+	{
+		nextd = ft_strchr(s, c);
+		if (nextd == NULL)
+		{
+			arr[j] = ft_substr(s, 0, ft_strlen(s));
+			break ;
+		}
+		else
+			arr[j] = ft_substr(s, 0, nextd - s);
+		s = ft_strnchr(nextd, c);
+		j++;
+	}
+}
 
 /*
 	Example string: "BBhelloBBuB"
@@ -50,63 +69,44 @@ static size_t	island_quant(char *s, char c)
 */
 char	**ft_split(char const *s, char c)
 {
+	size_t	islands_q;
 	char	*s_copy;
 	char	*c_copy;
 	char	**arr;
-	char	*nextd;
-	size_t	islands_q;
-	size_t	j;
 
 	c_copy = ft_calloc(2, 1);
 	c_copy[0] = c;
 	s_copy = ft_strtrim(s, c_copy);
-
 	islands_q = island_quant(s_copy, c);
-	
 	arr = ft_calloc(islands_q + 1, sizeof(char *));
 	if (!arr)
 		return (NULL);
 	arr[islands_q * sizeof(char *)] = NULL;
-
-
-	j = 0;
-	while (j < islands_q)
-	{
-		nextd = ft_strchr(s_copy, c);
-
-		if (nextd == NULL)
-		{
-			arr[j] = ft_substr(s_copy, 0, ft_strlen(s_copy));
-			break ;
-		}
-		else
-			arr[j] = ft_substr(s_copy, 0, nextd - s_copy);
-
-		s_copy = ft_strnchr(nextd, c);
-		j++;
-	}
-
+	arr_setter(s_copy, arr, c);
 	free(c_copy);
-	// free(s_copy);
+	free(s_copy);
 	return (arr);
 }
 
-// /*
+/*
 int main(void)
 {
-	char **tab;
+	char	**tab;
+	char	*splitme;
 	
-	// tab = ft_split("  tripouille  42  ", ' ');
-	tab	= ft_split("tripouille", 0);
-	// // tab = ft_split("BBhelloBBuBaBBB", 'B');
-
-	// printf("%s\n", tab[0]);
+	splitme = strdup("--1-2--3---4----5-----42");
+	tab = ft_split(splitme, '-');
+	printf("%lu\n", strlen(tab[0]));
 	// printf("%s\n", tab[1]);
 	// printf("%s\n", tab[2]);
-	// // printf("%s\n", tab[3]);
-	// // printf("%d\n", tab[2] == NULL);
-	printf("%d\n", !strcmp(tab[0], "tripouille"));
-	// printf("%zu\n", island_quant("tripouille", 0));
+	// printf("%s\n", tab[3]);
+	// printf("%s\n", tab[4]);
+	// printf("%s\n", tab[5]);
+	// printf("%s\n", tab[6]);
+	// printf("%s\n", tab[7]);
+
+	// printf("%zu\n", island_quant("", ' '));
+
 
 }
-// */
+*/

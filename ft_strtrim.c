@@ -68,10 +68,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 	new[i] = '\0';
 	return (new);
 }
+
 /*
 int	main(void)
 {
-	printf("%s\n", ft_strtrim("ACBBBBBB", "ABC"));
+    char    *other;
+
+    other = ft_strtrim("BBACBBBBBB", "B");
+	printf("%s\n", other);
+    free(other);
 
 	return (0);
 }

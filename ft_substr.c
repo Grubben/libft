@@ -12,6 +12,16 @@
 
 #include "libft.h"
 
+/*
+len does not include the '\0'
+    even though it is added to the end
+        of the string
+in other words:
+    
+    string[len] == '\0'
+
+*/
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	slen;
