@@ -70,7 +70,13 @@ char	*ft_strtrim(char const *s1, char const *set);
 
 char	**ft_split(char const *s, char c);
 
+char	*ft_itoa(int n);
+
 /* MINE */
 int		ft_charinside(char c, const char *s);
 
 char	*ft_strnchr(char *s, int c);
+
+void ft_reverse(char *s);
+
+void ft_reversen(char *s, unsigned int n);
