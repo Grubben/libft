@@ -22,12 +22,14 @@ NAME		= libft.a
 
 all			: $(NAME)
 
- db			: 
+db			: 
 				$(CC) $(dbCFLAGS) $(SRCS)
 
 
- run			:
+run			:
 				$(CC) $(CFLAGS) $(SRCS)
+
+bonus		: all
 
 
 

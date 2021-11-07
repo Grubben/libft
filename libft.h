@@ -91,12 +91,14 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
+t_list	*ft_lstnew(void *content);
+
 
 /* MINE */
 int		ft_charinside(char c, const char *s);
 
 char	*ft_strnchr(char *s, int c);
 
-void ft_reverse(char *s);
+void	ft_reverse(char *s);
 
-void ft_reversen(char *s, unsigned int n);
+void	ft_reversen(char *s, unsigned int n);
