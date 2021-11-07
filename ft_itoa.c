@@ -8,7 +8,7 @@
 
 char	*ft_itoa(int n)
 {
-	char		*digit;
+	char			*digit;
 	signed char		sign;
 	unsigned int	new;
 	unsigned int	i;
@@ -17,14 +17,10 @@ char	*ft_itoa(int n)
 	if (n < 0)
 		sign = -1;
 	new = n * sign;
-
 	digit = ft_calloc(12, sizeof(signed char));
-
-	// ft_memset(digit, '0', 11);
-	// what if the number is 0!!!
-
-
 	i = 0;
+	if (new == 0)
+		digit[i++] = 0 + '0';
 	while (new != 0)
 	{
 		digit[i] = new % 10 + '0';
@@ -33,15 +29,15 @@ char	*ft_itoa(int n)
 	}
 	if (sign < 0)
 		digit[i] = '-';
-
 	ft_reversen(digit, i + 1);
 	return (digit);
 }
-
-int main(void)
+/*
+int	main(void)
 {
 
-	printf("%s\n", ft_itoa(0));
+	printf("%zu\n", ft_strlen(ft_itoa(-2147483648)));
 
 	return (0);
 }
+*/
