@@ -93,6 +93,9 @@ typedef struct	s_list
 
 t_list	*ft_lstnew(void *content);
 
+void	ft_lstadd_front(t_list **lst, t_list *new);
+
+
 
 /* MINE */
 int		ft_charinside(char c, const char *s);
