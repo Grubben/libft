@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 19:44:19 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/10/27 20:40:54 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/11/09 20:43:13 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ char	**ft_split(char const *s, char c)
 	char	**arr;
 
 	c_copy = ft_calloc(2, 1);
+	if (!c_copy)
+		return (NULL);
 	c_copy[0] = c;
 	s_copy = ft_strtrim(s, c_copy);
 	islands_q = island_quant(s_copy, c);

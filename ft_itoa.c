@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 10:28:59 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/11/09 10:29:08 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/11/09 20:41:57 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ char	*ft_itoa(int n)
 		sign = -1;
 	new = n * sign;
 	digit = ft_calloc(12, sizeof(signed char));
+	if (!digit)
+		return (NULL);
 	i = 0;
 	if (new == 0)
 		digit[i++] = 0 + '0';

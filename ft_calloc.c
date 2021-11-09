@@ -6,20 +6,22 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 18:11:58 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/10/26 18:12:17 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/11/09 20:46:33 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* if (count == 0 || size == 0)
+ 	return (NULL);*/
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
 	size_t	i;
 
-	if (count == 0 || size == 0)
-		return (NULL);
 	ptr = malloc(count * size);
+	if (!ptr)
+		return (NULL);
 	i = 0;
 	while (i < count * size)
 	{

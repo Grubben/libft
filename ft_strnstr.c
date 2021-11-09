@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 19:31:07 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/10/28 16:24:39 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/11/09 21:11:20 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,16 @@ and that first letter is indeed succesful
 if not continue until final '\0'
 */
 
+/*
+if (len < ft_strlen(needle))
+	return (NULL);
+*/
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 
 	if (!ft_strlen(needle))
 		return ((char *)haystack);
-	if (len < ft_strlen(needle))
-		return (NULL);
 	i = 0;
 	while (haystack[i] != '\0' && i <= len - ft_strlen(needle))
 	{

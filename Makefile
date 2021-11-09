@@ -32,8 +32,6 @@ run			:
 bonus		: all
 
 
-
-
 $(NAME)		: $(OBJS)
 				ar rs $(NAME) $(OBJS)
 

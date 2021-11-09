@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 18:23:29 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/10/26 18:23:30 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/11/09 20:53:50 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ char	*ft_strdup(const char *s1)
 
 	len = ft_strlen(s1);
 	ptr = malloc(len + 1);
+	if (!ptr)
+		return (NULL);
 	i = 0;
 	while (i < len)
 	{

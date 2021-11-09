@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 18:25:00 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/10/28 16:00:57 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/11/09 21:05:20 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		return (ft_strlen(src) + dst_init_len);
 	return (ft_strlen(src) + dstsize);
 }
+
 /*
 int main(void)
 {

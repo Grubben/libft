@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 12:55:04 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/10/28 15:08:24 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/11/09 21:01:54 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if (((char *) s)[i] == (unsigned char)c)
+		if (((unsigned char *) s)[i] == (unsigned char)c)
 			return ((unsigned char *)s + i);
 		i++;
 	}

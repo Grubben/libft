@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 19:39:23 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/11/09 11:30:24 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/11/09 20:54:17 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 #include <string.h>
 #include <ctype.h>
 
-int		ft_isalpha(char c);
+int		ft_isalpha(int c);
 
-int		ft_isalnum(char c);
+int		ft_isalnum(int c);
 
-int		ft_isdigit(char c);
+int		ft_isdigit(int c);
 
-int		ft_isascii(char c);
+int		ft_isascii(int c);
 
 int		ft_isprint(int c);
 
@@ -109,3 +109,5 @@ char	*ft_strnchr(char *s, int c);
 void	ft_reverse(char *s);
 
 void	ft_reversen(char *s, unsigned int n);
+
+void	ft_lstprint(t_list *head);

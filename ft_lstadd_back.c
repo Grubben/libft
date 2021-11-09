@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 11:29:20 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/11/09 11:35:12 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/11/09 20:37:28 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,48 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	*lst = ft_lstlast(*lst);
-	(*lst)->next = new;
-	new->next = NULL;
-	
+	// *lst = ft_lstlast(*lst);
+	// (*lst)->next = new;
+	// new->next = NULL;
+	if (lst)
+	{
+		if (*lst)
+		{
+			if (new)
+			{
+				ft_lstlast(*lst)->next = new;
+				new->next = NULL;
+				return ;
+			}
+		}	
+		*lst = new;
+	}
 }
+
+/*
+int main()
+{
+	t_list	*head;
+	t_list	el[2];
+
+	head = NULL;
+
+	el[0].content = (void *)"good";
+	el[0].next = el[1];
+
+	el[1].content = (void *)"bye";
+	el[1].next
+
+	// printf("%d\n", ft_lstsize(head)); // == 0
+
+	head = ft_lstnew((void *)"hello");
+	// printf("%d\n", ft_lstsize(head)); // == 1
+
+	ft_lstadd_back(&head, &(el[0]));
+	// printf("%d\n", ft_lstsize(head)); // == 2
+
+	ft_lstprint(head);
+
+	return 0;
+}
+*/

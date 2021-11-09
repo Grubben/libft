@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 10:28:48 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/11/09 10:28:49 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/11/09 20:40:38 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	len = ft_strlen(s);
 	new = ft_calloc(len + 1, sizeof(char));
+	if (!new)
+		return (NULL);
 	i = 0;
 	while (s[i] != '\0')
 	{
