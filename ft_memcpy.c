@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 17:45:24 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/10/28 15:08:39 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/11/09 10:30:01 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	size_t	i;
 
 	if (dest == NULL && src == NULL)
-		return NULL;
+		return (NULL);
 	i = 0;
 	while (i < n)
 	{

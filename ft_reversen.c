@@ -1,11 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_reversen.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/09 10:31:01 by amaria-d          #+#    #+#             */
+/*   Updated: 2021/11/09 10:34:00 by amaria-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 /* reverse:  reverse string s in place */
-void ft_reversen(char *s, unsigned int n)
+void	ft_reversen(char *s, unsigned int n)
 {
-	int i, j;
-    char c;
-	
+	char	c;
+	int		i;
+	int		j;
+
 	if (n < 2)
 		return ;
 	j = n - 1;
@@ -14,13 +27,13 @@ void ft_reversen(char *s, unsigned int n)
 	i = 0;
 	while (i < j)
 	{
-        c = s[i];
-        s[i] = s[j];
-        s[j] = c;
+		c = s[i];
+		s[i] = s[j];
+		s[j] = c;
 		i++;
 		j--;
 	}
-}  
+}
 
 /*
 int	main(void)
