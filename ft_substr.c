@@ -6,11 +6,35 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 19:38:49 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/10/27 19:39:11 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/11/10 19:23:57 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	*substr(char const *s, unsigned int start, size_t len)
+{
+	size_t	i;
+	size_t	j;
+	char	*str;
+
+	str = (char*)malloc(sizeof(*s) * (len + 1));
+	if (!str)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (s[i])
+	{
+		if (i >= start && j < len)
+		{
+			str[j] = s[i];
+			j++;
+		}
+		i++;
+	}
+	str[j] = 0;
+	return (str);
+}
 
 /*
 len does not include the '\0'
@@ -20,18 +44,22 @@ in other words:
     
     string[len] == '\0'
 
+Things to add:
+	long long	min;
+	min = ft_smin((long long)start, (long long)len);
+	ptr = ft_calloc(min + 1, sizeof(char));
 */
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	slen;
-	size_t	i;
-	char	*ptr;
+	size_t		slen;
+	size_t		i;
+	char		*ptr;
 
 	slen = ft_strlen(s);
 	if (start < slen)
 	{
-		ptr = malloc(slen - start + 1);
+		ptr = ft_calloc(len + 1, sizeof(char));
 		if (!ptr)
 			return (NULL);
 		i = 0;
@@ -40,28 +68,29 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 			ptr[i] = s[start + i];
 			i++;
 		}
-		ptr[i] = '\0';
 		return (ptr);
 	}
-	ptr = malloc(1);
-	ptr[0] = '\0';
+	ptr = ft_calloc(1, 1);
+	if (!ptr)
+		return (NULL);
 	return (ptr);
 }
+
 /*	return (NULL);*/
 
 /*
 int	main(void)
 {
-    char    *s;
+	char *str = "i just want this part #############";
+	size_t size = 10;
 
-	// s = ft_substr("tripouille", 1, 1);
-    // printf("%s__%d\n", s, !strcmp(s, "r"));
+	printf("%s\n", ft_substr(str, 5, size));
+	printf("%s\n", substr(str, 5, size));
+	
+	printf("%zu\n", ft_strlen(ft_substr(str, 5, size)));
+	printf("%zu\n", ft_strlen(substr(str, 5, size)));
+	
 
-   	s = ft_substr("tripouille", 100, 1);
-	// printf("%s__%d\n", s, !strcmp(s, ""));
-	if (!strcmp(s, ""))
-		printf("it's null\n");
-
-	// printf("%s\n", ft_substr("goodbye", 4, 10));
+	return (0);
 }
 */

@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 11:56:30 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/11/09 21:25:27 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/11/10 18:43:14 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,11 @@ int	ft_atoi(const char *str)
 	return (num * sign);
 }
 
-// /*
+/*
 int main(void)
 {
 	printf("%d\n", atoi("    -214748365"));
 	printf("%d\n", ft_atoi("    -214748365"));
 	return 0;
 }
-// */
+*/

@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 19:39:23 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/11/09 20:54:17 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/11/10 19:09:04 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,3 +111,7 @@ void	ft_reverse(char *s);
 void	ft_reversen(char *s, unsigned int n);
 
 void	ft_lstprint(t_list *head);
+
+int		ft_smin(long long a, long long b);
+
+int		ft_smax(long long a, long long b);
