@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 18:25:00 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/11/09 21:05:20 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/11/10 18:37:24 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst_init_len = ft_strlen(dst);
 	if (dstsize)
 	{
-		i = ft_strlen(dst);
-		while (src[i] && i < dstsize - 1)
+		i = dst_init_len;
+		while (i < dstsize - 1)
 		{
 			dst[i] = src[i - dst_init_len];
 			i++;
 		}
-		dst[dst_init_len + i] = '\0';
+		dst[i] = '\0';
 	}
 	if (dstsize > dst_init_len)
 		return (ft_strlen(src) + dst_init_len);
@@ -36,26 +36,15 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 /*
 int main(void)
 {
-	// char	hello1[20] = "hello";
-	// char	good1[] = "goodbye";
+	char *str = "the cake is a lie !\0I'm hidden lol\r\n";
+	char buff1[3840] = "\0there is no stars in the sky";
+	char buff2[3840] = "\0there is no stars in the sky";
+	size_t max = 47;
 
-	// char	hello2[20] = "hello";
-	// char	good2[] = "goodbye";
-
-	// int		size = 20;
-
-	char	dest[30];
-	char	*src = "AAAAAAAAA";
-	
-	// printf("%lu\n", strlcat(hello1, good1, size));
-	// printf("%s\n\n", hello1);
-
-	// printf("%lu\n", ft_strlcat(hello2, good2, size));
-	// printf("%s\n", hello2);
-
-	memset(dest, 0, 30);
-	printf("%zu\n", strlcat(dest, src, 1));
-	printf("%s\n", dest);
+	strlcat(buff2, str, max);
+	printf("%d\n", strcmp(buff1, buff2));
+	printf("%s\n", buff1);
+	printf("%s\n", buff2);
 	
 }
 */
