@@ -6,11 +6,12 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 10:27:38 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/11/11 17:42:53 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/11/11 17:55:00 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <fcntl.h>
 
 // void	ft_putnbr_fd(int n, int fd)
 // {
@@ -58,16 +59,17 @@ void	ft_putnbr_fd(int n, int fd)
 		n = -n;
 	}
 
-	while (n > 9)
+	while (n < 9)
 	{
 		ft_putnbr_fd(n % 10, fd);
 		ft_putchar_fd(n % 10 + '0', fd);
 	}
 }
 
-// /*
+/*
 int	main(void)
 {
-	ft_putnbr_fd(-1, 5);
+	int		fd = open("trash.txt", O_RDWR | O_APPEND);
+	ft_putnbr_fd(-1, fd);
 }
-// */
+*/
