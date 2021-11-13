@@ -1,5 +1,0 @@
-Hello, world!
-
-25 <- a num
-2147483647 <- a num
--2147483648 <- a num
