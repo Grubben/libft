@@ -12,30 +12,12 @@
 
 #include "libft.h"
 
-// char	*substr(char const *s, unsigned int start, size_t len)
-// {
-// 	size_t	i;
-// 	size_t	j;
-// 	char	*str;
-
-// 	str = (char*)malloc(sizeof(*s) * (len + 1));
-// 	if (!str)
-// 		return (NULL);
-// 	i = 0;
-// 	j = 0;
-// 	while (s[i])
-// 	{
-// 		if (i >= start && j < len)
-// 		{
-// 			str[j] = s[i];
-// 			j++;
-// 		}
-// 		i++;
-// 	}
-// 	str[j] = 0;
-// 	return (str);
-// }
-
+static int	ft_smin(long long a, long long b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
 /*
 len does not include the '\0'
     even though it is added to the end
@@ -61,7 +43,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	slen = ft_strlen(s);
 	if (start < slen)
 	{
-		ptr = ft_calloc(len + 1, sizeof(char));
+		ptr = ft_calloc(ft_smin(slen, len) + 1, sizeof(char));
 		if (!ptr)
 			return (NULL);
 		i = 0;
@@ -83,14 +65,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 /*
 int	main(void)
 {
-	char *str = "i just want this part #############";
-	size_t size = 10;
+	char *str = "tripouille";
+	size_t size = 42000;
 
-	printf("%s\n", ft_substr(str, 5, size));
-	printf("%s\n", substr(str, 5, size));
+	printf("%s\n", ft_substr(str, 0, size));
+	//printf("%s\n", substr(str, 5, size));
 	
-	printf("%zu\n", ft_strlen(ft_substr(str, 5, size)));
-	printf("%zu\n", ft_strlen(substr(str, 5, size)));
+	//printf("%zu\n", ft_strlen(ft_substr(str, 5, size)));
+	//printf("%zu\n", ft_strlen(substr(str, 5, size)));
 	
 
 	return (0);
