@@ -6,11 +6,24 @@
 /*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 19:44:19 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/11/13 10:38:10 by amc              ###   ########.fr       */
+/*   Updated: 2021/11/13 11:39:28 by amc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+
+/* This function will not check the last '\0'*/
+static char	*ft_strnchr(char *s, int c)
+{
+	while (*s != '\0')
+	{
+		if (*s != (char)c)
+			return (s);
+		s++;
+	}
+	return (NULL);
+}
 
 /*
 	Receives string already strtrimmed

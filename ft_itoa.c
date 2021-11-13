@@ -3,14 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 10:28:59 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/11/09 20:41:57 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/11/13 11:38:03 by amc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void	ft_reversen(char *s, unsigned int n)
+{
+	char	c;
+	int		i;
+	int		j;
+
+	if (n < 2)
+		return ;
+	j = n - 1;
+	if (n > ft_strlen(s))
+		j = ft_strlen(s) - 1;
+	i = 0;
+	while (i < j)
+	{
+		c = s[i];
+		s[i] = s[j];
+		s[j] = c;
+		i++;
+		j--;
+	}
+}
 
 /*
 	1) make 12 places: the minus, each digit and the '\0'
