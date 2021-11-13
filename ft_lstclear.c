@@ -6,7 +6,7 @@
 /*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 10:45:05 by amc               #+#    #+#             */
-/*   Updated: 2021/11/13 10:45:06 by amc              ###   ########.fr       */
+/*   Updated: 2021/11/13 12:46:39 by amc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,9 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		{
 			after = here->next;
 			ft_lstdelone(here, del);
-			free(here);
 			here = after;
 		}
 		ft_lstdelone(here, del);
-		free(here);
 		*lst = NULL;
 	}
 }
