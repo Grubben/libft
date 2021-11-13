@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 19:44:19 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/11/09 20:43:13 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/11/13 10:38:10 by amc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@ char	**ft_split(char const *s, char c)
 	char	*c_copy;
 	char	**arr;
 
+	if (!s)
+		return (NULL);
 	c_copy = ft_calloc(2, 1);
 	if (!c_copy)
 		return (NULL);

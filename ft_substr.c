@@ -3,38 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 19:38:49 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/11/10 19:23:57 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/11/13 10:40:42 by amc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*substr(char const *s, unsigned int start, size_t len)
-{
-	size_t	i;
-	size_t	j;
-	char	*str;
+// char	*substr(char const *s, unsigned int start, size_t len)
+// {
+// 	size_t	i;
+// 	size_t	j;
+// 	char	*str;
 
-	str = (char*)malloc(sizeof(*s) * (len + 1));
-	if (!str)
-		return (NULL);
-	i = 0;
-	j = 0;
-	while (s[i])
-	{
-		if (i >= start && j < len)
-		{
-			str[j] = s[i];
-			j++;
-		}
-		i++;
-	}
-	str[j] = 0;
-	return (str);
-}
+// 	str = (char*)malloc(sizeof(*s) * (len + 1));
+// 	if (!str)
+// 		return (NULL);
+// 	i = 0;
+// 	j = 0;
+// 	while (s[i])
+// 	{
+// 		if (i >= start && j < len)
+// 		{
+// 			str[j] = s[i];
+// 			j++;
+// 		}
+// 		i++;
+// 	}
+// 	str[j] = 0;
+// 	return (str);
+// }
 
 /*
 len does not include the '\0'
@@ -56,6 +56,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t		i;
 	char		*ptr;
 
+	if (!s)
+		return (NULL);
 	slen = ft_strlen(s);
 	if (start < slen)
 	{

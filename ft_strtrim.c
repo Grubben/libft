@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 19:26:33 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/10/27 19:38:35 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/11/13 10:38:57 by amc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	i;
 	char	*new;
 
+	if (!s1)
+		return (NULL);
 	len = ft_strlen(s1);
 	start = ft_quant_matches(s1, set, 1);
 	end = ft_quant_matches(s1, set, 0);

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/13 10:45:05 by amc               #+#    #+#             */
+/*   Updated: 2021/11/13 10:45:06 by amc              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
@@ -8,7 +20,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	if (*lst != NULL && lst != NULL)
 	{
 		here = *lst;
-
 		while (here->next != NULL)
 		{
 			after = here->next;
@@ -22,6 +33,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	}
 }
 
+/*
 int	main(void)
 {
 	t_list *l = ft_lstnew(ft_strdup("nyancat"));
@@ -30,3 +42,4 @@ int	main(void)
 	ft_lstclear(&l, free);
 	write(2, "", 1);
 }
+*/

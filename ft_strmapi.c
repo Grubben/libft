@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 10:28:48 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/11/09 20:40:38 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/11/13 10:36:33 by amc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 	char	*new;
 
+	if (!s)
+		return (NULL);
 	len = ft_strlen(s);
 	new = ft_calloc(len + 1, sizeof(char));
 	if (!new)
