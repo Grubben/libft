@@ -3,18 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 19:39:23 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/11/11 16:52:55 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/11/13 10:55:32 by amc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
+#ifndef LIBFT_H
+# define LIBFT_H
+# include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <string.h>
+# include <ctype.h>
 
 int		ft_isalpha(int c);
 
@@ -123,3 +125,5 @@ void	ft_lstprint(t_list *head);
 int		ft_smin(long long a, long long b);
 
 int		ft_smax(long long a, long long b);
+
+#endif
