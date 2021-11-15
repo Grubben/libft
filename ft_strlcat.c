@@ -6,11 +6,34 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 18:25:00 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/11/10 18:37:24 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/11/15 16:31:32 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// size_t  ft_strlcat(char *dst, const char *src, size_t dstsize)
+// {
+//     size_t  start;
+//     size_t  dest_len;
+//     size_t  src_len;
+//     dest_len = ft_strlen(dst);
+//     src_len = ft_strlen(src);
+//     start = ft_strlen(dst);
+//     if (dest_len < dstsize - 1 && dstsize > 0)
+//     {
+//         while ((start < dstsize - 1) && (*src != '\0'))
+//         {
+//             dst[start] = *src;
+//             start++;
+//             src++;
+//         }
+//         dst[start] = '\0';
+//     }
+//     if (dest_len >= dstsize)
+//         dest_len = dstsize;
+//     return (dest_len + src_len);
+// }
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
@@ -18,10 +41,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t		i;
 
 	dst_init_len = ft_strlen(dst);
-	if (dstsize)
+	if (dstsize && dst_init_len < dstsize)
 	{
 		i = dst_init_len;
-		while (i < dstsize - 1)
+		while (i < dstsize - 1 && src[i - dst_init_len])
 		{
 			dst[i] = src[i - dst_init_len];
 			i++;
@@ -36,15 +59,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 /*
 int main(void)
 {
-	char *str = "the cake is a lie !\0I'm hidden lol\r\n";
-	char buff1[3840] = "\0there is no stars in the sky";
-	char buff2[3840] = "\0there is no stars in the sky";
-	size_t max = 47;
+	char	*src = "AAAAAAAAA";
+	char	dest[30];
 
-	strlcat(buff2, str, max);
-	printf("%d\n", strcmp(buff1, buff2));
-	printf("%s\n", buff1);
-	printf("%s\n", buff2);
+	memset(dest, '\0', 5);
+	printf("%d\n", ft_strlcat(dest, src, -1) == 14);
 	
 }
 */
