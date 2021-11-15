@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 19:26:33 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/11/13 11:37:14 by amc              ###   ########.fr       */
+/*   Updated: 2021/11/15 18:33:45 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ static int	ft_charinside(char c, const char *s)
 	}
 	return (0);
 }
+
 static size_t	ft_quant_matches(char const *s, char const *set, int startLeft)
 {
 	size_t	len;
