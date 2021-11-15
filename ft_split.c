@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 19:44:19 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/11/13 11:39:28 by amc              ###   ########.fr       */
+/*   Updated: 2021/11/15 18:32:17 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 /* This function will not check the last '\0'*/
 static char	*ft_strnchr(char *s, int c)
@@ -98,7 +97,7 @@ char	**ft_split(char const *s, char c)
 	arr = ft_calloc(islands_q + 1, sizeof(char *));
 	if (!arr)
 		return (NULL);
-	arr[islands_q * sizeof(char *)] = NULL;
+	arr[islands_q] = NULL;
 	arr_setter(s_copy, arr, c);
 	free(c_copy);
 	free(s_copy);
@@ -109,20 +108,9 @@ char	**ft_split(char const *s, char c)
 int main(void)
 {
 	char	**tab;
-	char	*splitme;
-	
-	splitme = strdup("--1-2--3---4----5-----42");
-	tab = ft_split(splitme, '-');
-	printf("%lu\n", strlen(tab[0]));
-	// printf("%s\n", tab[1]);
-	// printf("%s\n", tab[2]);
-	// printf("%s\n", tab[3]);
-	// printf("%s\n", tab[4]);
-	// printf("%s\n", tab[5]);
-	// printf("%s\n", tab[6]);
-	// printf("%s\n", tab[7]);
 
-	// printf("%zu\n", island_quant("", ' '));
+	tab = ft_split("tripouille", 0);
+	printf("%d\n", tab[1] == NULL);
 
 
 }
