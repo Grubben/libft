@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 10:28:59 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/11/16 12:25:39 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/11/16 12:49:57 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,8 @@ char	*ft_itoa(int n)
 /*
 void	aux(char *s, long int n)
 {
-	static unsigned int	i;
+	static unsigned int	i = 0;
 
-	i = 0;
 	if (n < 0)
 	{
 		s[i] = '-';
