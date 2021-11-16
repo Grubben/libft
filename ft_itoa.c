@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 10:28:59 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/11/16 12:06:27 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/11/16 12:19:10 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,36 +68,30 @@
 // 	return (final);
 // }
 
-void	auxPos(char *s, unsigned int n)
+void	aux(char *s, long int n)
 {
 	static unsigned int	i;
 
 	i = 0;
-	if (n > 9)
-		auxPos(s, n/10);
-	s[i] = n;
-	i++;
-}
-
-void	auxNeg(char *s, int n)
-{
-	static unsigned int i;
-
-	i = 0;
-	s[i] = '-';
-	i++;
-	if (n > 9)
-		auxPos(s, (-n)/10);
-}
-
-char	*ft_itoaE(int n)
-{
-	char	digit[11];
-
 	if (n < 0)
-		auxNeg(digit, n);
-	else
-		auxPos(digit, n);
+	{
+		s[i] = '-';
+		i++;
+		aux(s, -n);
+		return ;
+	}
+	if (n > 9)
+		aux(s, n/10);
+	s[i] = (n % 10) + '0';
+	i++;
+}
+
+char	*ft_itoa(int n)
+{
+	char	digit[12];
+
+	ft_memset(digit, 0, 12);
+	aux(digit, n);
 	return (ft_strdup(digit));
 }
 
@@ -105,7 +99,11 @@ char	*ft_itoaE(int n)
 int	main(void)
 {
 
-	printf("%s\n", ft_itoa(-2147483648));
+	printf("%s\n", ft_itoa(-623));
+
+	printf("%s\n", ft_itoa(156));
+
+	printf("%s\n", ft_itoa(-0));
 
 	return (0);
 }
