@@ -6,86 +6,83 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 10:28:59 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/11/15 21:36:13 by amaria-d         ###   ########.fr       */
+/*   Updated: 2021/11/16 11:48:01 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// static void	ft_reversen(char *s, unsigned int n)
-// {
-// 	char	c;
-// 	int		i;
-// 	int		j;
+static void	ft_reversen(char *s, unsigned int n)
+{
+	char	c;
+	int		i;
+	int		j;
 
-// 	if (n < 2)
-// 		return ;
-// 	j = n - 1;
-// 	if (n > ft_strlen(s))
-// 		j = ft_strlen(s) - 1;
-// 	i = 0;
-// 	while (i < j)
-// 	{
-// 		c = s[i];
-// 		s[i] = s[j];
-// 		s[j] = c;
-// 		i++;
-// 		j--;
-// 	}
-// }
+	if (n < 2)
+		return ;
+	j = n - 1;
+	if (n > ft_strlen(s))
+		j = ft_strlen(s) - 1;
+	i = 0;
+	while (i < j)
+	{
+		c = s[i];
+		s[i] = s[j];
+		s[j] = c;
+		i++;
+		j--;
+	}
+}
 
 /*
 	1) make 12 places: the minus, each digit and the '\0'
 
 */
 
-// char	*ft_itoa(int n)
-// {
-// 	char			*digit;
-// 	signed char		sign;
-// 	unsigned int	new;
-// 	unsigned int	i;
-
-// 	sign = 1;
-// 	if (n < 0)
-// 		sign = -1;
-// 	new = n * sign;
-// 	digit = ft_calloc(12, sizeof(signed char));
-// 	if (!digit)
-// 		return (NULL);
-// 	i = 0;
-// 	if (new == 0)
-// 		digit[i++] = 0 + '0';
-// 	while (new != 0)
-// 	{
-// 		digit[i] = new % 10 + '0';
-// 		new = new / 10;
-// 		i++;
-// 	}
-// 	if (sign < 0)
-// 		digit[i] = '-';
-// 	ft_reversen(digit, i + 1);
-// 	return (digit);
-// }
-
 char	*ft_itoa(int n)
 {
-	static char		digit[11];
-	static	size_t	i;
-	
-	i = 0;
+	char			digit[12];
+	char			*final;
+	signed char		sign;
+	unsigned int	new;
 
-	if (n > 9)
+	sign = 1;
+	if (n < 0)
+		sign = -1;
+	new = n * sign;
+	ft_memset(digit, 0, 12);
+	n = 0;
+	if (new == 0)
+		digit[n++] = 0 + '0';
+	while (new != 0)
 	{
-		return ft_itoa(n / 10);
+		digit[n++] = new % 10 + '0';
+		new = new / 10;
 	}
-	digit[i] = n / 10 + 48;
-	i++;
-
-	return (ft_strdup(digit));
+	if (sign < 0)
+		digit[n] = '-';
+	ft_reversen(digit, n + 1);
+	final = ft_strdup(digit);
+	if (!final)
+		return (NULL);
+	return (final);
 }
+// char	*ft_itoa(int n)
+// {
+// 	static char		digit[11];
+// 	static	size_t	i;
 
-// /*
+// 	i = 0;
+// 	if (n > 9)
+// 	{
+// 		return ft_itoa(n / 10);
+// 	}
+// 	digit[i] = n / 10 + 48;
+// 	i++;
+// 	return (ft_strdup(digit));
+// }
+
+/*
 int	main(void)
 {
 
@@ -93,4 +90,4 @@ int	main(void)
 
 	return (0);
 }
-// */
+*/
