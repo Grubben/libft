@@ -23,14 +23,13 @@ RM			= rm -rf
 
 NAME		= libft.a
 
-$(NAME)		: all
-				ar rs $(NAME) $(OBJS) $(OBJS_bonus)
+$(NAME)		: $(OBJS)
+				ar rs $(NAME) $(OBJS)
 
+all			: bonus
 
-all			: $(OBJS) $(OBJS_bonus)
-
-bonus		: $(OBJS_bonus)
-
+bonus		: $(NAME) $(OBJS_bonus)
+				ar rs $(NAME) $(OBJS_bonus)
 
 clean		:
 				$(RM) $(OBJS) $(OBJS_bonus)
