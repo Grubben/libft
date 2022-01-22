@@ -36,7 +36,7 @@ clean		:
 				$(RM) $(OBJS) $(OBJS_bonus)
 
 fclean		: clean
-				$(RM) $(NAME)
+				$(RM) *.out* $(NAME) *.gch
 
 re			: fclean $(NAME)
 
