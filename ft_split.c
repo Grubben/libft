@@ -12,18 +12,6 @@
 
 #include "libft.h"
 
-/* This function will not check the last '\0'*/
-static char	*ft_strnchr(char *s, int c)
-{
-	while (*s != '\0')
-	{
-		if (*s != (char)c)
-			return (s);
-		s++;
-	}
-	return (NULL);
-}
-
 /*
 	Receives string already strtrimmed
 

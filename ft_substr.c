@@ -12,12 +12,6 @@
 
 #include "libft.h"
 
-static int	ft_smin(long long a, long long b)
-{
-	if (a < b)
-		return (a);
-	return (b);
-}
 /*
 len does not include the '\0'
     even though it is added to the end

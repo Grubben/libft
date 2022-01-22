@@ -12,28 +12,6 @@
 
 #include "libft.h"
 
-static void	ft_reversen(char *s, unsigned int n)
-{
-	char	c;
-	int		i;
-	int		j;
-
-	if (n < 2)
-		return ;
-	j = n - 1;
-	if (n > ft_strlen(s))
-		j = ft_strlen(s) - 1;
-	i = 0;
-	while (i < j)
-	{
-		c = s[i];
-		s[i] = s[j];
-		s[j] = c;
-		i++;
-		j--;
-	}
-}
-
 /*
 	1) make 12 places: the minus, each digit and the '\0'
 

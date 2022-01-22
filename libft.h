@@ -111,7 +111,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-/* MINE 
+/* MINE */
 int		ft_charinside(char c, const char *s);
 
 char	*ft_strnchr(char *s, int c);
@@ -125,5 +125,4 @@ void	ft_lstprint(t_list *head);
 int		ft_smin(long long a, long long b);
 
 int		ft_smax(long long a, long long b);
-*/
 #endif
