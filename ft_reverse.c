@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnchr.c                                       :+:      :+:    :+:   */
+/*   ft_reverse.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/22 12:16:55 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/11/09 10:34:42 by amaria-d         ###   ########.fr       */
+/*   Created: 2021/11/09 10:30:58 by amaria-d          #+#    #+#             */
+/*   Updated: 2021/11/09 10:32:58 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
- * This function will not check the last '\0'
-*/
-char	*ft_strnchr(char *s, int c)
+/* reverse:  reverse string s in place */
+void	reverse(char *s)
 {
-	while (*s != '\0')
-	{
-		if (*s != (char)c)
-			return (s);
-		s++;
-	}
-	return (NULL);
-}
+	char	c;
+	int		i;
+	int		j;
 
-/*
-int main(void)
-{
-	printf("%s\n", ft_strnchr("cccabc", 'c'));
-	return 0;
+	i = 0;
+	j = ft_strlen(s) - 1;
+	while (i < j)
+	{
+		c = s[i];
+		s[i] = s[j];
+		s[j] = c;
+		i++;
+		j--;
+	}
 }
-*/

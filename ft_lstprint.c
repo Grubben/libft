@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstprint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/22 12:16:55 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/11/09 10:34:42 by amaria-d         ###   ########.fr       */
+/*   Created: 2021/11/09 20:13:09 by amaria-d          #+#    #+#             */
+/*   Updated: 2021/11/13 10:43:48 by amc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
- * This function will not check the last '\0'
-*/
-char	*ft_strnchr(char *s, int c)
-{
-	while (*s != '\0')
+void	ft_lstprint(t_list *head)
+{	
+	if (head)
 	{
-		if (*s != (char)c)
-			return (s);
-		s++;
+		printf("%s\n", head->content);
+		while (head->next != NULL)
+		{
+			head = head->next;
+			printf("%s\n", head->content);
+		}
 	}
-	return (NULL);
 }
-
-/*
-int main(void)
-{
-	printf("%s\n", ft_strnchr("cccabc", 'c'));
-	return 0;
-}
-*/
