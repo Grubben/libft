@@ -16,8 +16,8 @@ OBJS		= $(SRCS:.c=.o)
 OBJS_bonus	= $(SRCS_bonus:.c=.o)
 
 CC 			= gcc
-CFLAGS		= -Wall -Wextra -Werror
-dbCFLAGS	= -Wall -Wextra -Werror -g -fsanitize=address
+CFLAGS		= -g3 -Wall -Wextra -Werror
+dbCFLAGS	= -Wall -Wextra -Werror -g3 -fsanitize=address
 
 RM			= rm -rf
 
