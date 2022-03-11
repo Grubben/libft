@@ -12,7 +12,7 @@ SRCS_bonus	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_b
 				ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
 
-OBJS		= $(SRCS:.c=.o)
+OBJS		= ${SRCS:.c=.o}
 OBJS_bonus	= $(SRCS_bonus:.c=.o)
 
 CC 			= gcc
