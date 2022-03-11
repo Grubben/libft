@@ -12,20 +12,6 @@
 
 #include "libft.h"
 
-static int	ft_charinside(char c, const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == c)
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
 static size_t	ft_quant_matches(char const *s, char const *set, int startLeft)
 {
 	size_t	len;

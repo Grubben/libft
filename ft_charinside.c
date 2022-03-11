@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnchr.c                                       :+:      :+:    :+:   */
+/*   ft_charinside.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/22 12:16:55 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/11/09 10:34:42 by amaria-d         ###   ########.fr       */
+/*   Created: 2021/10/27 19:26:38 by amaria-d          #+#    #+#             */
+/*   Updated: 2021/10/27 19:26:39 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
- * This function will not check the last '\0'
-*/
-char	*ft_strnchr(char *s, int c)
+int	ft_charinside(char c, const char *s)
 {
-	while (*s != '\0')
-	{
-		if (*s != (char)c)
-			return (s);
-		s++;
-	}
-	return (NULL);
-}
+	size_t	i;
 
-/*
-int main(void)
-{
-	printf("%s\n", ft_strnchr("cccabc", 'c'));
-	return 0;
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+			return (1);
+		i++;
+	}
+	return (0);
 }
-*/

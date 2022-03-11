@@ -1,35 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnchr.c                                       :+:      :+:    :+:   */
+/*   ft_smin.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/22 12:16:55 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/11/09 10:34:42 by amaria-d         ###   ########.fr       */
+/*   Created: 2021/11/10 19:04:52 by amaria-d          #+#    #+#             */
+/*   Updated: 2021/11/13 10:43:28 by amc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
- * This function will not check the last '\0'
-*/
-char	*ft_strnchr(char *s, int c)
+int	ft_smin(long long a, long long b)
 {
-	while (*s != '\0')
-	{
-		if (*s != (char)c)
-			return (s);
-		s++;
-	}
-	return (NULL);
+	if (a < b)
+		return (a);
+	return (b);
 }
-
-/*
-int main(void)
-{
-	printf("%s\n", ft_strnchr("cccabc", 'c'));
-	return 0;
-}
-*/
