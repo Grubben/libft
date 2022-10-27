@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/24 11:56:30 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/14 11:15:48 by amaria-d         ###   ########.fr       */
+/*   Created: 2022/10/14 11:13:49 by amaria-d          #+#    #+#             */
+/*   Updated: 2022/10/18 15:03:49 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+long	ft_atol(const char *str)
 {
-	unsigned int	num;
+	unsigned long	num;
 	signed char		sign;
 	size_t			i;
 
@@ -33,19 +33,10 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] != '\0')
 	{
-		if (! (48 <= str[i] && str[i] <= 57))
+		if (!ft_isdigit(str[i]))
 			return (num * sign);
 		num = (num * 10) + str[i] - '0';
 		i++;
 	}
 	return (num * sign);
 }
-
-/*
-int main(void)
-{
-	printf("%d\n", atoi("    -214748365"));
-	printf("%d\n", ft_atoi("    -214748365"));
-	return 0;
-}
-*/

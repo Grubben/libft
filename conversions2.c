@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstprint.c                                      :+:      :+:    :+:   */
+/*   conversions2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 20:13:09 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/18 15:05:54 by amaria-d         ###   ########.fr       */
+/*   Created: 2022/02/16 13:51:51 by amaria-d          #+#    #+#             */
+/*   Updated: 2022/02/16 13:54:12 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstprint(t_list *head)
-{	
-	if (head)
-	{
-		ft_printf("| %i | ", *(int *)(head->content));
-		while (head->next != NULL)
-		{
-			head = head->next;
-			ft_printf("%i | ", *(int *)(head->content));
-		}
-	}
+int	to_lohexadecimal(unsigned int n)
+{
+	int	count;
+
+	count = simple_putunbr_base(n, "0123456789abcdef");
+	return (count);
 }
 
-void	intptr_printer(void *pointer)
+int	to_uphexadecimal(unsigned int n)
 {
-	ft_printf("%i\n", *((int *)pointer));
+	int	count;
+
+	count = simple_putunbr_base(n, "0123456789ABCDEF");
+	return (count);
 }
 
-void	ft_lstprint2(t_list *head)
+int	to_percent(void)
 {
-	ft_lstiter(head, intptr_printer);
+	ft_putchar_fd('%', 1);
+	return (1);
 }

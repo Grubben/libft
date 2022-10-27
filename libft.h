@@ -3,20 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amc <amc@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 19:39:23 by amaria-d          #+#    #+#             */
-/*   Updated: 2021/11/13 11:36:16 by amc              ###   ########.fr       */
+/*   Updated: 2022/10/18 15:07:02 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
 # include <unistd.h>
-# include <stdio.h>
+// # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
 # include <ctype.h>
+# include <stdarg.h>
 
 int		ft_isalpha(int c);
 
@@ -59,6 +61,8 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
 int		ft_atoi(const char *str);
+
+long	ft_atol(const char *str);
 
 void	*ft_calloc(size_t count, size_t size);
 
@@ -112,6 +116,44 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 /* MINE */
+
+/*
+ * Returns length of given t_list
+ */
+size_t	ft_lstlen(t_list *stack);
+
+/**
+ * Acts like python's index:
+ * [2,3,4].index(3) ->> 1
+ * Returns -1 if not present/ERROR
+ * Presumes that t_list.content points to an int
+ */
+size_t	ft_lstindex(t_list *stack, int value);
+
+/**
+ * Acts like python array[n]
+ */
+t_list	*ft_lstget_item(t_list *lst, ssize_t index);
+
+/*
+ * ft_lstget_item but presumes
+ * t_list::content is an (int *)
+ */
+int		ft_pslstget_it(t_list *lst, ssize_t index);
+
+/*
+Presumes t_list:content is originally int type
+*/
+int		ft_lstmin(t_list *lst);
+int		ft_lstmax(t_list *lst);
+
+/*
+Presumes t_list:content is originally (int *) type
+*/
+void	ft_lstprint(t_list *head);
+
+t_list	*ft_lstcpy(t_list *lst);
+
 int		ft_charinside(char c, const char *s);
 
 char	*ft_strnchr(char *s, int c);
@@ -120,9 +162,37 @@ void	ft_reverse(char *s);
 
 void	ft_reversen(char *s, unsigned int n);
 
-void	ft_lstprint(t_list *head);
-
 int		ft_smin(long long a, long long b);
 
 int		ft_smax(long long a, long long b);
+
+/* FT_PRINTF */
+int		ft_printf(const char *format, ...);
+
+int		to_char(char c);
+
+int		to_pointer(void *ptr);
+
+int		to_string(char *ptr);
+
+int		to_decimal(int n);
+
+int		to_udecimal(unsigned int n);
+
+int		to_lohexadecimal(unsigned int n);
+
+int		to_uphexadecimal(unsigned int n);
+
+int		to_percent(void);
+
+int		base_check(char *base);
+
+size_t	num_len(ssize_t nbr);
+
+int		ft_putnbr_base(ssize_t nbr, char *base);
+
+int		ft_putunbr_base(size_t nbr, char *base);
+
+size_t	simple_putunbr_base(size_t nbr, char *base);
+
 #endif

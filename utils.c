@@ -1,36 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstprint.c                                      :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 20:13:09 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/18 15:05:54 by amaria-d         ###   ########.fr       */
+/*   Created: 2022/02/16 14:02:24 by amaria-d          #+#    #+#             */
+/*   Updated: 2022/02/16 14:09:17 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstprint(t_list *head)
-{	
-	if (head)
+int	base_check(char *base)
+{
+	if (ft_strlen(base) < 2)
 	{
-		ft_printf("| %i | ", *(int *)(head->content));
-		while (head->next != NULL)
-		{
-			head = head->next;
-			ft_printf("%i | ", *(int *)(head->content));
-		}
+		return (0);
 	}
+	while (*base != '\0')
+	{
+		if (*base == '+' || *base == '-')
+		{
+			return (0);
+		}
+		if (ft_charinside(*base, base + 1))
+		{
+			return (0);
+		}
+		++base;
+	}
+	return (1);
 }
 
-void	intptr_printer(void *pointer)
+size_t	num_len(ssize_t nbr)
 {
-	ft_printf("%i\n", *((int *)pointer));
-}
+	size_t	count;
 
-void	ft_lstprint2(t_list *head)
-{
-	ft_lstiter(head, intptr_printer);
+	if (nbr >= 0 && nbr < 10)
+		return (1);
+	count = 0;
+	if (nbr < 0)
+		count = 1;
+	while (nbr != 0)
+	{
+		count++;
+		nbr = nbr / 10;
+	}
+	return (count);
 }
