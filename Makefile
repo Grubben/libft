@@ -1,7 +1,7 @@
 NAME		= libft.a
 
 CC 			= gcc
-CFLAGS		= -g3 -Wall -Wextra -Werror -D BUFFER_SIZE=20
+CFLAGS		= -g3 -Wall -Wextra -Werror
 
 RM			= rm -rf
 
