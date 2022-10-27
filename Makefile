@@ -29,10 +29,10 @@ clean		:
 				$(RM) $(OBJS)
 
 fclean		: clean
-				$(RM) *.out* $(NAME) *.gch
+				$(RM) *.out* $(NAME)
 				$(RM) *.a
 
 re			: fclean $(NAME)
 
 
-.PHONY		: all bonus clean fclean re
+.PHONY		: re fclean clean all

@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 19:39:23 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/27 11:10:37 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/10/27 11:22:19 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <string.h>
-# include <ctype.h>
 # include <stdarg.h>
-// # include <stdio.h>
 
 /*	GET_NEXT_LINE	*/
 # ifndef BUFFER_SIZE
