@@ -164,6 +164,8 @@ void	ft_lstprint(t_list *head);
 
 t_list	*ft_lstcpy(t_list *lst);
 
+char    **ft_lsttoarr(t_list *lst);
+
 int		ft_charinside(char c, const char *s);
 
 char	*ft_strnchr(char *s, int c);
@@ -175,6 +177,8 @@ void	ft_reversen(char *s, unsigned int n);
 int		ft_smin(long long a, long long b);
 
 int		ft_smax(long long a, long long b);
+
+void	ft_nothing();
 
 /* FT_PRINTF */
 int		ft_printf(const char *format, ...);
