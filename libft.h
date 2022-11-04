@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 19:39:23 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/10/27 11:22:19 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/11/04 14:44:03 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,6 +179,8 @@ int		ft_smin(long long a, long long b);
 int		ft_smax(long long a, long long b);
 
 void	ft_nothing();
+
+int	ft_str_isallp(char *str, char c);
 
 /* FT_PRINTF */
 int		ft_printf(const char *format, ...);
