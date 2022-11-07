@@ -12,10 +12,6 @@
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s);
-
-void	*ft_memcpy(void *dest, const void *src, size_t n);
-
 /*Presuposto que memcpy escreve da esquerda para a direita
  * IMPORTANTE
 */
