@@ -182,7 +182,7 @@ void	ft_nothing(void);
 
 int		ft_str_isallp(char *str, char c);
 
-size_t	ft_mtrxlen(const void **m);
+size_t	ft_mtrxlen(void **m);
 
 /* FT_PRINTF */
 int		ft_printf(const char *format, ...);

@@ -14,7 +14,7 @@
 
 /* Gives len of matrix -> array of array
 */
-size_t	ft_mtrxlen(const void **m)
+size_t	ft_mtrxlen(void **m)
 {
 	size_t	i;
 
