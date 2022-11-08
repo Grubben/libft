@@ -6,7 +6,7 @@
 /*   By: endarc <endarc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 19:39:23 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/11/07 16:45:27 by endarc           ###   ########.fr       */
+/*   Updated: 2022/11/08 11:39:21 by endarc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -181,6 +181,8 @@ int		ft_smax(long long a, long long b);
 void	ft_nothing(void);
 
 int		ft_str_isallp(char *str, char c);
+
+size_t	ft_mtrxlen(const void **m);
 
 /* FT_PRINTF */
 int		ft_printf(const char *format, ...);
