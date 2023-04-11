@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: endarc <endarc@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 19:39:23 by amaria-d          #+#    #+#             */
-/*   Updated: 2023/04/10 20:22:23 by amaria-d         ###   ########.fr       */
+/*   Updated: 2023/04/11 09:42:54 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,6 +185,8 @@ void	ft_nothing(void);
 int		ft_str_isallp(char *str, char c);
 
 size_t	ft_mtrxlen(void **m);
+
+size_t	ft_strpos(char *s, int c);
 
 /* FT_PRINTF */
 int		ft_printf(const char *format, ...);
