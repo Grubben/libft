@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 19:39:23 by amaria-d          #+#    #+#             */
-/*   Updated: 2023/04/11 09:50:39 by amaria-d         ###   ########.fr       */
+/*   Updated: 2023/04/11 09:52:50 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,7 +188,7 @@ size_t	ft_mtrxlen(void **m);
 
 size_t	ft_strpos(char *s, int c);
 
-size_t	ft_notstrpos(char *s, char *notstr)
+size_t	ft_notstrpos(char *s, char *notstr);
 
 /* FT_PRINTF */
 int		ft_printf(const char *format, ...);
